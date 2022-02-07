@@ -14,7 +14,7 @@ package com.frogobox.recyclercoroutines
  *
  */
 
-data class ExampleData(
+data class MainData(
     val name: String,
     val age: Int
 )
