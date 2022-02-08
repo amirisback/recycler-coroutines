@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.frogobox.recyclercoroutines.databinding.ActivityMainBinding
 import kotlinx.coroutines.delay
@@ -45,5 +46,17 @@ class MainActivity : AppCompatActivity(), MainItemListener {
     override fun onClickListener(data: MainData) {
         Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show()
     }
+
+    fun repeater(adapter: MainAdapter) {
+        lifecycleScope.launch {
+            repeat(10) { i -> // launch a lot of coroutines
+                delay(1000L)
+                Log.d("Coroutines", "Repeat $i")
+                adapter.notifyInserted(MainData("Repeater", i), i+1)
+            }
+
+        }
+    }
+
 
 }
