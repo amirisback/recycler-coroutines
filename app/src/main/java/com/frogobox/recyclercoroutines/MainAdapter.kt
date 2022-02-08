@@ -27,6 +27,11 @@ class MainAdapter(private val listener: MainItemListener) : RecyclerView.Adapter
         listData.addAll(data)
     }
 
+    fun notifyInserted(data: MainData, position: Int) {
+        listData.add(position, data)
+        notifyItemInserted(position)
+    }
+
     fun clearData() {
         listData.clear()
         notifyItemRangeRemoved(0, listData.size - 1)
