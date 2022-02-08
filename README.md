@@ -1,4 +1,12 @@
 ## Sample RecyclerView Auto Add With Coroutine
+- Koin (Kotlin Dependency Injection)
+- Coroutines
+- View Model
+- Lifecycle
+
+## Result
+<img width="200px" height="360px" src="https://raw.githubusercontent.com/amirisback/recycler-coroutines/master/docs/image/img_auto_add.gif">
+
 
 ## Colaborator
 Very open to anyone, I'll write your name under this, please contribute by sending an email to me
